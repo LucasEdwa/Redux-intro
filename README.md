@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# Redux Application 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Learning to create reducers and manage state with Redux Toolkit to handle interactions with components.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a simple counter application built using Redux Toolkit. It demonstrates how to manage application state effectively using Redux concepts such as slices, reducers, actions, and asynchronous thunks.
 
-## Expanding the ESLint configuration
+## What I Learned
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Setting Up Redux Toolkit**:
+   - Learned how to configure a Redux store using `configureStore` from Redux Toolkit.
+   - Understood how to integrate the store with a React application using the `Provider` component.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Creating Slices**:
+   - Learned to define a slice using `createSlice`, which combines reducers and actions in a single structure.
+   - Explored how to define initial state and reducers for handling synchronous actions.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Handling Asynchronous Logic**:
+   - Learned to use `createAsyncThunk` to handle asynchronous operations, such as simulating API calls.
+   - Understood how to manage loading states and handle asynchronous actions using `extraReducers`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. **Connecting Redux to React Components**:
+   - Learned to use `useSelector` to access state values in React components.
+   - Used `useDispatch` to dispatch actions from React components to update the state.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+5. **Code Organization**:
+   - Understood the importance of organizing Redux logic into slices and keeping the store configuration separate.
+   - Learned to structure the application with clear separation between state management and UI components.
+
+6. **Practical Usage**:
+   - Implemented a counter with increment, decrement, and increment by a specific amount functionality.
+   - Added asynchronous increment functionality to simulate real-world scenarios.
+
+## How to Run
+
+1. Clone the repository.
+2. Install dependencies using `npm install` or `yarn`.
+3. Start the development server using `npm start` or `yarn start`.
+4. Open the application in your browser to interact with the counter.
+
+## Key Files
+
+- **`src/state/counter/counterSlice.ts`**: Contains the Redux slice for the counter, including reducers and asynchronous logic.
+- **`src/state/store.ts`**: Configures the Redux store and combines reducers.
+- **`src/components/Counter.tsx`**: React component that interacts with the Redux store to display and update the counter.
+- **`src/App.tsx`**: Main application component that renders the counter.
+
+This project provided hands-on experience with Redux Toolkit and demonstrated how to manage state in a scalable and maintainable way.
