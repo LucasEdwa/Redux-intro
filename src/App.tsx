@@ -1,12 +1,13 @@
-import { Counter } from "./components/Counter";
-
+import { AddTask } from "./components/AddTask";
+import { TaskList } from "./components/TaskList";
  
 // reducers
  const App = () => {
   return (
-    <div>
+    <div className="App">
       <h1>Redux Example</h1>
-      <Counter />
+      <AddTask />
+      <TaskList />
     </div>
   );
 }
